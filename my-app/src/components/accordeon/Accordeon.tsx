@@ -3,6 +3,12 @@ import React from "react";
 type AccordeonPropsType = {
     titleValue: string
     collapsed?:boolean
+    items:Array<string>
+}
+
+type AccordeonBodyPropsType = {
+
+    items:Array<string>
 }
 
 export function Accordeon(props:AccordeonPropsType) {
@@ -10,7 +16,7 @@ export function Accordeon(props:AccordeonPropsType) {
         return (
             <div>
                 <AccordeonTitle title={props.titleValue}/>
-                {!props.collapsed  && <AccordeonBody />}
+                {!props.collapsed  && <AccordeonBody items={props.items}/>}
             </div>
         )
 
@@ -29,13 +35,11 @@ function AccordeonTitle(props:AccordeonTitlePropsType) {
         </div>
     )
 }
-function AccordeonBody() {
+function AccordeonBody(props:AccordeonBodyPropsType) {
     return (
         <div>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                {props.items.map( i => <li>{i}</li>)}
             </ul>
         </div>
     )

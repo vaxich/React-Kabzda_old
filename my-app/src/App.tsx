@@ -6,6 +6,7 @@ import {RaitingValueType, Rating} from "./components/Raiting/Raiting";
 import {OnOff} from "./components/On-Off/onOff";
 import {UnControledAccordeon} from "./components/accordeon/UnControledAccordeon";
 import {UnControledRating} from "./components/Raiting/UnControledRaiting";
+import {ControledInput, ControledCheckbox, ControledSelect} from "./components/input/ControledInput";
 
 function App() {
     // делает что-то полезное
@@ -15,13 +16,17 @@ function App() {
         <div>
             {/*<OnOff />*/}
             {/*<UnControledAccordeon titleValue={"Menu"}/>*/}
-            {/*<Accordeon titleValue={"Users"} collapsed={false}/>*/}
+            <Accordeon titleValue={"Users"} collapsed={false} items={["Pavel", "Valera", "Dymich"]}/>
 
             <Rating value = {ratingValue} onClick={setRatingValue}/>
             {/*<UnControledRating />*/}
 
             {/*<PageTitle title={"This is APP component"} />*/}
             {/*<PageTitle title={"My friends"} />*/}
+            <ControledInput />
+            <ControledCheckbox />
+            <ControledSelect />
+
 
 
 
