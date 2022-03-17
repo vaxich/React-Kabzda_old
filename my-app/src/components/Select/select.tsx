@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, MouseEventHandler, useState } from 'react';
+import React, { KeyboardEvent, MouseEventHandler, useEffect, useState } from 'react';
 import styles from "./Select.module.css";
 
 type ItemsType = {
@@ -15,6 +15,10 @@ type SelectPropsType = {
 export function Select(props: SelectPropsType) {
     const [active, setActive] = useState(false);
     const [hoveredElement, setHoveredElement] = useState(props.value);
+
+    useEffect( ()=> {
+        setHoveredElement(props.value)
+    }, [props.value])
 
     const toggleItems = () => {
         setActive(!active)
@@ -51,7 +55,7 @@ export function Select(props: SelectPropsType) {
     }
 
 
-}
+
 
 
 return (
@@ -73,5 +77,4 @@ return (
 
     </div>
 )
-
-}
+        }

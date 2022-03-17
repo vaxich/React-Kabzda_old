@@ -14,15 +14,15 @@ function App() {
     // обязана вернуть JSX
     return (
         <div>
-            {/*<OnOff />*/}
-            {/*<UnControledAccordeon titleValue={"Menu"}/>*/}
+            <OnOff />
+            <UnControledAccordeon titleValue={"Menu"}/>
             <Accordeon titleValue={"Users"} collapsed={false} items={["Pavel", "Valera", "Dymich"]}/>
 
             <Rating value = {ratingValue} onClick={setRatingValue}/>
-            {/*<UnControledRating />*/}
+            <UnControledRating />
 
-            {/*<PageTitle title={"This is APP component"} />*/}
-            {/*<PageTitle title={"My friends"} />*/}
+            <PageTitle title={"This is APP component"} />
+            <PageTitle title={"My friends"} />
             <ControledInput />
             <ControledCheckbox />
             <ControledSelect />
